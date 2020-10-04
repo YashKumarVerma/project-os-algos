@@ -5,15 +5,15 @@
 using namespace std;
 
 /*This is Logger File 
-to use this logger youneed to instantiate LoggerClass and using logInfo() function
-with two strings as arguements ex: log("command","command category") and the time stamp is appended to this
+to use this logger you need to instantiate LoggerClass and using logInfo() function
+with two strings as arguments ex: log("command","command category") and the time stamp is appended to this
 OutPut Example:
 command|category|time
 Sample.txt:
 ls|Command_System|1601834132
 cd|Command_System|1601834132
+
 here:
-command|category|time
 "|" being the delimiter
 */
 
