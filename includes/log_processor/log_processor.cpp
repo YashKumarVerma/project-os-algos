@@ -35,3 +35,14 @@ vector<string> LogProcessor::tokenizeEntry(string line){
  
     return tokens;
 } 
+
+/** function to get all entries from a particular checkpoint **/
+vector<LogEntry> LogProcessor::Fetch(int timestamp){
+    vector<LogEntry> entries;
+    for(auto entry : this->entryStorage){
+        if(entry.timestamp >= timestamp){
+            entries.push_back(entry);
+        }
+    }
+    return entries;
+}

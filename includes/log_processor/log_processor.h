@@ -21,6 +21,7 @@ class LogProcessor{
     public:
         vector<LogEntry> entryStorage;
         LogProcessor(vector<string> entries);
+        vector<LogEntry> Fetch(int timestamp);
 };
 
 #endif

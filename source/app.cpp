@@ -26,9 +26,10 @@ int main(){
     cout << endl << rainbow::bold(rainbow::underline("Reading and Processing Logs")) << endl;
     vector<string> commands = logger.readAll();
 
+    cout << rainbow::red("Displaying all entries from timestamp 1602321815") << endl;
     LogProcessor logProcessor(commands);
-    for(auto iter : logProcessor.entryStorage){
-        cout << iter.timestamp << endl;
+    for(auto entry : logProcessor.Fetch(1602321815)){
+        cout << entry.timestamp << " : " << entry.command << endl;
     }
 
     return 0;
