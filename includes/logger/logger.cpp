@@ -39,6 +39,33 @@ ofstream &operator<<(ofstream &ofs, LoggerModule &s){
     return ofs;
 }
 
+/* overloading insertion operator to read data from file*/
+ifstream &operator>>(ifstream &ifs, LoggerModule &s)
+{
+
+    ifs >> s.commandName;
+    ifs >> s.category;
+    ifs >> s.systime;
+    return ifs;
+}
+/*read() function prints all the commands from beginning of usage of the program*/
+void LoggerModule::read()
+    {
+
+        LoggerModule s;
+        std::ifstream file("logs.txt");
+        if (file.is_open())
+        {
+            std::string line;
+            while (std::getline(file, line))
+            {
+                // using printf() in all tests for consistency
+                printf("%s\n", line.c_str());
+            }
+            file.close();
+        }
+    }
+
 /**
  * @method 
  * @description: to write a log entry into persistant storage, with timestamp and 
